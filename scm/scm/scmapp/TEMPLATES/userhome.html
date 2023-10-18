@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+
+{% block title %} UserHome {% endblock %}
+
+{% block body %}
+
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-xl-12 col-lg-12">
+            <h1>Welcome User: {{name}}</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h2 class="text-center" >{{status}}</h2>
+        <div class="col-md-6 col-xl-6 col-lg-6">
+            <a href="#">
+            <img src="{% static 'user/eye.jpeg' %}" width="50%">
+            <a href="show_event"><p>Show All Events</p></a>
+            </a>
+        </div>
+          <div class="col-md-6 col-xl-6 col-lg-6">
+              <a href="ground_booking">
+              <img src="{% static 'user/krishna.jpg'%}" width="50%">
+                  <p>Book Ground</p>
+              </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

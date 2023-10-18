@@ -1,0 +1,29 @@
+{% extends 'master.html' %}
+
+{% block title %} User Login Page {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-lg-6 mx-auto">
+            {{msg}}
+            <form method="POST" action="otp_check">
+                {% csrf_token %}
+                <input type="hidden" value={{email}} name="emailid" />
+                <input type="hidden" value={{otp}} name="myotp" />
+                <div class="form-group">
+                <label for="email">Enter OTP</label>
+                <input type="text" class="form-control" id="email" name="otp">
+
+              </div>
+
+
+
+              <button type="submit" class="btn btn-primary">Verifiy</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
